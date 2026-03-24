@@ -1,0 +1,11 @@
+# Environment Variables
+.env
+
+# Database files
+data/
+
+# Mock requests for testing
+requests.http
+
+# IDE files
+.vscode/
