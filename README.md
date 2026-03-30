@@ -24,7 +24,7 @@ This project serves as a boilerplate for building structured Go APIs while gaini
   - [`handler/`](internal/handler) - *HTTP Handlers*
     - `product_handler.go`
   - [`model/`](internal/model) - *Domain Models*
-    - `user.go`
+    - `product.go`
   - [`repository/`](internal/repository) - *Database Access Layer*
     - `product_repository.go`
   - [`route/`](internal/route) - *Routing Definitions*
