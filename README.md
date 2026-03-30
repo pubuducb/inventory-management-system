@@ -14,22 +14,22 @@ This project serves as a boilerplate for building structured Go APIs while gaini
 ## Folder Structure
 
 - `cmd/`
-  - `api/`
+  - [`api/`](cmd/api)
     - `main.go` - *Application entry point*
-- `data/`
-  - `app.db` - *Database file*
+- `data/` - *Database files*
+  - `app.db`
 - `internal/`
-  - `config/`
+  - [`config/`](internal/config)
     - `db.go` - *Database Configuration & Initialization*
-  - `handler/` - *HTTP Handlers*
+  - [`handler/`](internal/handler) - *HTTP Handlers*
     - `product_handler.go`
-  - `model/` - *Domain Models*
+  - [`model/`](internal/model) - *Domain Models*
     - `user.go`
-  - `repository/` - *Database Access Layer*
+  - [`repository/`](internal/repository) - *Database Access Layer*
     - `product_repository.go`
-  - `route/` - *Routing Definitions*
+  - [`route/`](internal/route) - *Routing Definitions*
     - `routes.go`
-  - `service/` - *Dependency Wiring*
+  - [`service/`](internal/server) - *Dependency Wiring*
     - `service.go`
 - `go.mod`
 - `go.sum`
