@@ -45,10 +45,28 @@ func initDB(dbPath string) (*sql.DB, error) {
 }
 
 func SetupSchema(db *sql.DB) error {
+	if err := createUsersTable(db); err != nil {
+		return err
+	}
 	if err := createProductsTable(db); err != nil {
 		return err
 	}
 	return nil
+}
+
+func createUsersTable(db *sql.DB) error {
+	query := `
+	CREATE TABLE IF NOT EXISTS users (
+		id INTEGER PRIMARY KEY AUTOINCREMENT,
+		name TEXT NOT NULL,
+		email TEXT NOT NULL,
+		password TEXT,
+		role TEXT,
+		created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+		archived_at DATETIME DEFAULT NULL
+	);`
+	_, err := db.Exec(query)
+	return err
 }
 
 func createProductsTable(db *sql.DB) error {

@@ -5,7 +5,7 @@
 data/
 
 # Mock requests for testing
-requests.http
+tests/requests.http
 
 # IDE files
 .vscode/

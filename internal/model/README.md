@@ -1,6 +1,6 @@
 # Overview of the files in the folder `internal/model/`
 
-## Product Entity `product.go`
+## Entity
 
 ### Input Validation
 

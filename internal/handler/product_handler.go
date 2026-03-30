@@ -6,7 +6,6 @@ import (
 	"ims/internal/model"
 	"ims/internal/repository"
 	"net/http"
-	"strconv"
 
 	"github.com/gin-gonic/gin"
 )
@@ -20,7 +19,6 @@ func NewProductHandler(repo repository.ProductRepository) *ProductHandler {
 }
 
 const ErrorMessageInvalidProductId = "Invalid product ID format"
-const ErrorMessageInvalidRequestBody = "Invalid request body"
 const ErrorMessageCreateProductFailed = "Failed to create product"
 const ErrorMessageUpdateProductFailed = "Failed to update product"
 const ErrorMessageDeleteProductFailed = "Failed to delete product"
@@ -133,9 +131,4 @@ func (handler *ProductHandler) DeleteProduct(context *gin.Context) {
 	}
 
 	context.Status(http.StatusNoContent)
-}
-
-func getIDParam(context *gin.Context) (int, error) {
-	idStr := context.Param("id")
-	return strconv.Atoi(idStr)
 }

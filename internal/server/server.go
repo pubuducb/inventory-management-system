@@ -15,12 +15,15 @@ const defaultServerPort = ":8080"
 
 func InitHTTPServer(db *sql.DB) *http.Server {
 
+	userRepo := repository.NewUserRepository(db)
+	userHandler := handler.NewUserHandler(userRepo)
+
 	productRepo := repository.NewProductRepository(db)
 	productHandler := handler.NewProductHandler(productRepo)
 
 	gin.SetMode(gin.ReleaseMode)
 	router := gin.Default()
-	route.SetupRoutes(router, productHandler)
+	route.SetupRoutes(router, userHandler, productHandler)
 
 	serverPort := os.Getenv("PORT")
 	if serverPort == "" {
